@@ -1,0 +1,99 @@
+/* styles/global.css */
+/* CSS custom properties (variables) for theming — light and dark mode */
+
+/* ── Light Theme ── */
+:root,
+[data-theme="light"] {
+  --bg: #f0f2f5;
+  --header-bg: #ffffff;
+  --toolbar-bg: #fafafa;
+  --sidebar-bg: #ffffff;
+  --editor-bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --page-bg: #ffffff;
+  --page-border: rgba(0, 0, 0, 0.06);
+  --input-bg: #f8f9fa;
+  --hover-bg: #f0f2f5;
+  --code-bg: #f6f8fa;
+  --code-text: #24292e;
+
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #999999;
+
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  --accent: #4f46e5;           /* Indigo */
+  --accent-soft: #eef2ff;
+}
+
+/* ── Dark Theme ── */
+[data-theme="dark"] {
+  --bg: #111827;
+  --header-bg: #1f2937;
+  --toolbar-bg: #1f2937;
+  --sidebar-bg: #1f2937;
+  --editor-bg: #111827;
+  --card-bg: #1f2937;
+  --page-bg: #1e2433;
+  --page-border: rgba(255, 255, 255, 0.06);
+  --input-bg: #111827;
+  --hover-bg: #374151;
+  --code-bg: #111827;
+  --code-text: #e5e7eb;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #6b7280;
+
+  --border: #374151;
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  --accent: #818cf8;           /* Lighter indigo for dark bg */
+  --accent-soft: rgba(129, 140, 248, 0.12);
+}
+
+/* ── Base Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Smooth theme transitions */
+body, .document-page, .home-page {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Focus outline */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
