@@ -1,99 +1,140 @@
-/* styles/global.css */
-/* CSS custom properties (variables) for theming — light and dark mode */
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ── Light Theme ── */
 :root,
 [data-theme="light"] {
-  --bg: #f0f2f5;
-  --header-bg: #ffffff;
-  --toolbar-bg: #fafafa;
-  --sidebar-bg: #ffffff;
-  --editor-bg: #f0f2f5;
-  --card-bg: #ffffff;
-  --page-bg: #ffffff;
-  --page-border: rgba(0, 0, 0, 0.06);
-  --input-bg: #f8f9fa;
-  --hover-bg: #f0f2f5;
-  --code-bg: #f6f8fa;
-  --code-text: #24292e;
+  --bg:           #f5f4f0;
+  --header-bg:    #ffffff;
+  --toolbar-bg:   #ffffff;
+  --sidebar-bg:   #fafaf8;
+  --editor-bg:    #f5f4f0;
+  --card-bg:      #ffffff;
+  --page-bg:      #ffffff;
+  --page-border:  rgba(0,0,0,0.06);
+  --input-bg:     #f5f4f0;
+  --hover-bg:     #f0ede8;
+  --glass-bg:     rgba(255,255,255,0.7);
 
-  --text-primary: #1a1a1a;
-  --text-secondary: #555555;
-  --text-muted: #999999;
+  --text-primary:   #18181b;
+  --text-secondary: #52525b;
+  --text-muted:     #a1a1aa;
 
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.08);
+  --border:  #e4e4e7;
+  --shadow:  rgba(0,0,0,0.07);
+  --shadow-lg: rgba(0,0,0,0.12);
 
-  --accent: #4f46e5;           /* Indigo */
-  --accent-soft: #eef2ff;
+  --accent:       #6d28d9;
+  --accent-2:     #7c3aed;
+  --accent-soft:  #ede9fe;
+  --accent-text:  #6d28d9;
+  --gradient:     linear-gradient(135deg, #6d28d9 0%, #4f46e5 50%, #0ea5e9 100%);
+  --gradient-soft: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+
+  --green:  #059669;
+  --red:    #dc2626;
+  --amber:  #d97706;
 }
 
 /* ── Dark Theme ── */
 [data-theme="dark"] {
-  --bg: #111827;
-  --header-bg: #1f2937;
-  --toolbar-bg: #1f2937;
-  --sidebar-bg: #1f2937;
-  --editor-bg: #111827;
-  --card-bg: #1f2937;
-  --page-bg: #1e2433;
-  --page-border: rgba(255, 255, 255, 0.06);
-  --input-bg: #111827;
-  --hover-bg: #374151;
-  --code-bg: #111827;
-  --code-text: #e5e7eb;
+  --bg:           #0f0f11;
+  --header-bg:    #18181b;
+  --toolbar-bg:   #18181b;
+  --sidebar-bg:   #18181b;
+  --editor-bg:    #0f0f11;
+  --card-bg:      #18181b;
+  --page-bg:      #1c1c1f;
+  --page-border:  rgba(255,255,255,0.05);
+  --input-bg:     #0f0f11;
+  --hover-bg:     #27272a;
+  --glass-bg:     rgba(24,24,27,0.8);
 
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --text-muted: #6b7280;
+  --text-primary:   #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted:     #52525b;
 
-  --border: #374151;
-  --shadow: rgba(0, 0, 0, 0.4);
+  --border:  #27272a;
+  --shadow:  rgba(0,0,0,0.4);
+  --shadow-lg: rgba(0,0,0,0.6);
 
-  --accent: #818cf8;           /* Lighter indigo for dark bg */
-  --accent-soft: rgba(129, 140, 248, 0.12);
+  --accent:       #a78bfa;
+  --accent-2:     #8b5cf6;
+  --accent-soft:  rgba(167,139,250,0.1);
+  --accent-text:  #a78bfa;
+  --gradient:     linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #38bdf8 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(99,102,241,0.2) 100%);
+
+  --green:  #10b981;
+  --red:    #f87171;
+  --amber:  #fbbf24;
 }
 
-/* ── Base Reset ── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+#root { height: 100%; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background: var(--bg);
+  color: var(--text-primary);
 }
 
-#root {
-  height: 100%;
-}
-
-/* Smooth theme transitions */
+/* ── Transitions ── */
 body, .document-page, .home-page {
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── Focus ── */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ── Animations ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Focus outline */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+/* ── Mobile touch improvements ── */
+button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+input, textarea { font-size: 16px; } /* Prevents iOS zoom on focus */
+
+/* ── Safe area (notch) support ── */
+.header {
+  padding-top: env(safe-area-inset-top, 0);
 }

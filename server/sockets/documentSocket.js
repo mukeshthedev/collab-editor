@@ -9,9 +9,9 @@ const activeUsers = {};
 
 // Color palette for user cursors — each user gets a unique color
 const USER_COLORS = [
-  "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4",
-  "#FFEAA7", "#DDA0DD", "#98D8C8", "#F7DC6F",
-  "#BB8FCE", "#85C1E9", "#82E0AA", "#F0B27A",
+  "#ff0000", "#00ffee", "#004858", "#00ff88",
+  "#ffc400", "#ff00ff", "#006b50", "#927500",
+  "#a300e9", "#808e97", "#2f00ff", "#ff7700",
 ];
 
 // Assign a color based on how many users are already in the room

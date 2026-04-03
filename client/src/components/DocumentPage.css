@@ -1,4 +1,4 @@
-/* components/DocumentPage.css */
+/* ── DocumentPage.css ── */
 
 .document-page {
   display: flex;
@@ -23,11 +23,11 @@
   position: relative;
 }
 
-/* Action bar above the editor */
+/* ── Action bar ── */
 .editor-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: 6px 16px;
   background: var(--toolbar-bg);
   border-bottom: 1px solid var(--border);
@@ -38,25 +38,117 @@
   align-items: center;
   gap: 6px;
   padding: 5px 12px;
-  border-radius: 5px;
+  border-radius: 7px;
   border: 1px solid var(--border);
-  background: var(--card-bg);
+  background: transparent;
   color: var(--text-secondary);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.18s;
 }
-
 .action-btn:hover,
 .action-btn.active {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-text);
   border-color: var(--accent);
 }
 
+/* ── Quill editor wrapper ── */
+.editor-wrapper {
+  flex: 1;
+  overflow: auto;
+  background: var(--editor-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.quill-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Override Quill styles ── */
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  background: var(--toolbar-bg) !important;
+  padding: 8px 16px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  font-size: 15px !important;
+  flex: 1;
+  background: var(--editor-bg) !important;
+}
+
+.ql-editor {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 48px 60px !important;
+  min-height: 100% !important;
+  line-height: 1.75 !important;
+  background: var(--page-bg) !important;
+  box-shadow: 0 0 0 1px var(--page-border), 0 4px 24px var(--shadow) !important;
+  border-radius: 4px;
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+  color: var(--text-primary) !important;
+  animation: fadeIn 0.3s ease;
+}
+
+.ql-editor.ql-blank::before {
+  color: var(--text-muted) !important;
+  font-style: normal !important;
+  font-size: 15px !important;
+}
+
+/* Toolbar icons in dark mode */
+[data-theme="dark"] .ql-snow .ql-stroke { stroke: var(--text-secondary) !important; }
+[data-theme="dark"] .ql-snow .ql-fill  { fill:   var(--text-secondary) !important; }
+[data-theme="dark"] .ql-snow .ql-picker-label { color: var(--text-secondary) !important; }
+[data-theme="dark"] .ql-snow .ql-picker-options {
+  background: var(--card-bg) !important;
+  border-color: var(--border) !important;
+}
+[data-theme="dark"] .ql-snow .ql-picker-item { color: var(--text-primary) !important; }
+[data-theme="dark"] .ql-toolbar button:hover .ql-stroke { stroke: var(--accent) !important; }
+[data-theme="dark"] .ql-toolbar button.ql-active .ql-stroke { stroke: var(--accent) !important; }
+
+/* Headings in editor */
+.ql-editor h1 { font-size: 2em; font-weight: 800; letter-spacing: -0.5px; }
+.ql-editor h2 { font-size: 1.5em; font-weight: 700; }
+.ql-editor h3 { font-size: 1.2em; font-weight: 700; }
+.ql-editor blockquote {
+  border-left: 3px solid var(--accent) !important;
+  padding-left: 16px !important;
+  color: var(--text-secondary) !important;
+  margin: 16px 0 !important;
+}
+.ql-editor code, .ql-editor pre {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.875em !important;
+}
+.ql-editor pre {
+  background: var(--input-bg) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* quill-cursors styling */
+.ql-cursor-caret { border-left-width: 2px !important; }
+.ql-cursor-flag { font-family: 'Plus Jakarta Sans', sans-serif !important; font-size: 11px !important; font-weight: 700 !important; border-radius: 4px 4px 4px 0 !important; padding: 2px 7px !important; }
+
 @media (max-width: 768px) {
-  .editor-layout {
-    flex-direction: column;
-  }
+  .editor-layout { flex-direction: column; }
+  .ql-editor { padding: 24px 20px !important; margin: 0 !important; border-radius: 0 !important; }
+}
+@media (max-width: 480px) {
+  .ql-editor { padding: 16px !important; }
 }
