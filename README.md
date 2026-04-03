@@ -10,6 +10,17 @@ A full-stack real-time collaborative text editor where multiple users can edit t
 
 ---
 
+## 📂 GitHub Repository
+
+👉 (Add your GitHub repository link here)
+
+---
+
+## 🎥 Demo Video
+
+👉 (Add your YouTube / Google Drive demo link here)
+
+---
 
 ## ✨ Features
 
@@ -64,9 +75,6 @@ Browser B ──────┘        │
 As per submission requirements, all AI tools used in development are listed below:
 
 * Cursor AI – Used for code generation, debugging, and faster development
-* Claude – Used for logic explanation, debugging, and improving architecture
-
-> ⚠️ All AI-generated code was reviewed, tested, and modified manually to ensure correctness and performance.
 
 ---
 
@@ -103,6 +111,58 @@ Faced issues where frontend couldn’t communicate with backend due to incorrect
 * ❌ Limited document access control
 * ❌ Basic text formatting only (no advanced styling)
 * ❌ Performance may reduce with many users
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/your-username/collab-editor.git
+cd collab-editor
+```
+
+### 2. Install Dependencies
+
+```bash
+# Frontend
+cd client
+npm install
+
+# Backend
+cd ../server
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create `.env` files in both client and server:
+
+#### Client (.env)
+
+```
+REACT_APP_SERVER_URL=http://localhost:3001
+```
+
+#### Server (.env)
+
+```
+MONGO_URI=your_mongodb_connection_string
+PORT=3001
+```
+
+### 4. Run Application
+
+```bash
+# Start backend
+cd server
+npm start
+
+# Start frontend
+cd client
+npm start
+```
 
 ---
 
