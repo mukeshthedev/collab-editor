@@ -10,18 +10,6 @@ A full-stack real-time collaborative text editor where multiple users can edit t
 
 ---
 
-## 📂 GitHub Repository
-
-👉 (Add your GitHub repository link here)
-
----
-
-## 🎥 Demo Video
-
-👉 (Add your YouTube / Google Drive demo link here)
-
----
-
 ## ✨ Features
 
 * ✅ Real-time collaborative editing (multiple users)
